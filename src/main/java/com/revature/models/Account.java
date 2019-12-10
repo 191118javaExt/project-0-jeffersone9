@@ -7,24 +7,28 @@ package com.revature.models;
 public class Account {
 
 	private int balance;
-	private Person holder;
+	private Customer holder;
 	private AccountType accType;
+	private String accNumber;
+	private String routeNumber;
 	
 	//A constructor for creating an account
-	public Account(Person person, AccountType accType, String accNumber) {
+	public Account(Customer person, AccountType accType, String accNum, String routeNum) {
 		super();
 		this.holder = person;
 		this.accType = accType;
-		final String account = accNumber;
+		accNumber = accNum;
+		routeNumber = routeNum;
 		balance = 0;
 	}
 	
 	//A constructor including an initial balance
-	public Account(Person person, AccountType accType, String accNumber, int balance) {
+	public Account(Customer person, AccountType accType, String accNum, String routeNum, int balance) {
 		super();
 		this.holder = person;
 		this.accType = accType;
-		final String account = accNumber;
+		accNumber = accNum;
+		routeNumber = routeNum;
 		this.balance = balance;
 	}
 
@@ -37,7 +41,7 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public Person getHolder() {
+	public Customer getHolder() {
 		return holder;
 	}
 
@@ -50,6 +54,26 @@ public class Account {
 		this.accType = accType;
 	}
 	
+	
+	
+	public String getRouteNumber() {
+		return routeNumber;
+	}
+
+
+	public String getAccNumber() {
+		return accNumber;
+	}
+
+
+	public void setHolder(Customer holder) {
+		this.holder = holder;
+	}
+
+	public void setAccType(AccountType accType) {
+		this.accType = accType;
+	}
+
 	public void Withdraw(int amount) throws IllegalArgumentException{
 		if(amount < 0 || amount > balance) {
 			throw new IllegalArgumentException();
