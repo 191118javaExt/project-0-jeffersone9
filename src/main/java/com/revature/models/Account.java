@@ -7,15 +7,13 @@ package com.revature.models;
 public class Account {
 
 	private int balance;
-	private Customer holder;
 	private AccountType accType;
 	private String accNumber;
 	private String routeNumber;
 	
 	//A constructor for creating an account
-	public Account(Customer person, AccountType accType, String accNum, String routeNum) {
+	public Account(AccountType accType, String accNum, String routeNum) {
 		super();
-		this.holder = person;
 		this.accType = accType;
 		accNumber = accNum;
 		routeNumber = routeNum;
@@ -23,9 +21,8 @@ public class Account {
 	}
 	
 	//A constructor including an initial balance
-	public Account(Customer person, AccountType accType, String accNum, String routeNum, int balance) {
+	public Account(AccountType accType, String accNum, String routeNum, int balance) {
 		super();
-		this.holder = person;
 		this.accType = accType;
 		accNumber = accNum;
 		routeNumber = routeNum;
@@ -39,10 +36,6 @@ public class Account {
 
 	public void setBalance(int balance) {
 		this.balance = balance;
-	}
-
-	public Customer getHolder() {
-		return holder;
 	}
 
 
@@ -65,10 +58,6 @@ public class Account {
 		return accNumber;
 	}
 
-
-	public void setHolder(Customer holder) {
-		this.holder = holder;
-	}
 
 	public void setAccType(AccountType accType) {
 		this.accType = accType;
