@@ -1,7 +1,7 @@
 package com.revature.models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
  * A bank object that holds all of the customers and employees.
@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Bank {
 
-	public List<Customer> customers = new ArrayList<>();
-	public List<Employee> employees = new ArrayList<>();
+	public Map<String, Customer> customers = new HashMap<>();
+	public Map<Integer, Employee> employees = new HashMap<>();
 	private static Bank bank = null;
 	
 	private Bank() {
@@ -24,5 +24,15 @@ public class Bank {
 			return bank;
 		}
 		return bank;
+	}
+	
+	public void addCustomer(String username, String password, String fName, String lName) {
+		Customer customer = new Customer(username, password, fName, lName);
+		customers.put(username, customer);
+	}
+	
+	public void addEmployee(EmployeeRoles role, String fName, String lName, int id, String email, double salary) {
+		Employee employee = new Employee(role, fName, lName, id, email, salary);
+		employees.put(id, employee);
 	}
 }

@@ -10,6 +10,7 @@ public class Account {
 	private AccountType accType;
 	private String accNumber;
 	private String routeNumber;
+	private Status status;
 	
 	//A constructor for creating an account
 	public Account(AccountType accType, String accNum, String routeNum) {
@@ -18,6 +19,7 @@ public class Account {
 		accNumber = accNum;
 		routeNumber = routeNum;
 		balance = 0;
+		status = Status.Open;
 	}
 	
 	//A constructor including an initial balance
@@ -27,6 +29,7 @@ public class Account {
 		accNumber = accNum;
 		routeNumber = routeNum;
 		this.balance = balance;
+		status = Status.Open;
 	}
 
 	//getters and setters
@@ -43,12 +46,19 @@ public class Account {
 		return accType;
 	}
 
-	public void ChangeAccType(AccountType accType) {
+	public void changeAccType(AccountType accType) {
 		this.accType = accType;
 	}
 	
 	
-	
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
 	public String getRouteNumber() {
 		return routeNumber;
 	}
@@ -63,14 +73,14 @@ public class Account {
 		this.accType = accType;
 	}
 
-	public void Withdraw(int amount) throws IllegalArgumentException{
+	public void withdraw(int amount) throws IllegalArgumentException{
 		if(amount < 0 || amount > balance) {
 			throw new IllegalArgumentException();
 		}
 		balance -= amount;
 	}
 	
-	public void Deposit(int amount) throws IllegalArgumentException{
+	public void deposit(int amount) throws IllegalArgumentException{
 		if(amount < 0) {
 			throw new IllegalArgumentException();
 		}

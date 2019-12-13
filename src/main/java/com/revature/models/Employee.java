@@ -5,14 +5,19 @@ public class Employee{
 	private EmployeeRoles role;
 	private String fName;
 	private String lName;
-	private String id;
+	private int id;
+	private Employee supervisor;
+	private double salary;
+	private String email;
 	private Account currAccount;
 	
-	public Employee(EmployeeRoles role, String fName, String lName, String id) {
+	public Employee(EmployeeRoles role, String fName, String lName, int id, String email, double salary) {
 		this.role = role;
 		this.fName = fName;
 		this.lName = lName;
 		this.id = id;
+		this.email = email;
+		this.salary = salary;
 	}
 
 	public EmployeeRoles getRole() {
@@ -39,12 +44,37 @@ public class Employee{
 		this.lName = lName;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+	
+
+	public Employee getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(Employee supervisor) {
+		this.supervisor = supervisor;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Account getCurrAccount() {
