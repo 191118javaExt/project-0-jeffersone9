@@ -73,7 +73,23 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	@Override
 	public Employee findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Employee e = null;
+		try(Connection con = ConnectionUtil.getConnection()){
+			String sql = "SELECT * FROM employee WHERE emp_id = " + id;
+			Statement stmnt = con.createStatement();
+			ResultSet rs = stmnt.executeQuery(sql);
+			String first = rs.getString("first_name");
+			String last = rs.getString("last_name");
+			String email = rs.getString("email");
+			double salary = rs.getDouble("salary");
+			int sup_id = rs.getInt("supervisor");
+			e = new Employee(EmployeeRoles.Default, first, last, id, email, salary);
+			//need to set the supervisor id
+			rs.close();
+		}catch(SQLException ex) {
+			logger.warn("Unable to get employee from database", ex);
+		}
+		return e;
 	}
 
 	@Override

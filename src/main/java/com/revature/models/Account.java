@@ -10,7 +10,7 @@ public class Account {
 	private AccountType accType;
 	private String accNumber;
 	private String routeNumber;
-	private Status status;
+	private AccountStatus status;
 	
 	//A constructor for creating an account
 	public Account(AccountType accType, String accNum, String routeNum) {
@@ -19,7 +19,7 @@ public class Account {
 		accNumber = accNum;
 		routeNumber = routeNum;
 		balance = 0;
-		status = Status.Open;
+		status = AccountStatus.Open;
 	}
 	
 	//A constructor including an initial balance
@@ -29,7 +29,7 @@ public class Account {
 		accNumber = accNum;
 		routeNumber = routeNum;
 		this.balance = balance;
-		status = Status.Open;
+		status = AccountStatus.Open;
 	}
 
 	//getters and setters
@@ -51,11 +51,11 @@ public class Account {
 	}
 	
 	
-	public Status getStatus() {
+	public AccountStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(AccountStatus status) {
 		this.status = status;
 	}
 

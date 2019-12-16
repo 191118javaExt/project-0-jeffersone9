@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import java.util.HashMap;
+
 public class Employee{
 
 	private EmployeeRoles role;
@@ -10,6 +12,7 @@ public class Employee{
 	private double salary;
 	private String email;
 	private Account currAccount;
+	private HashMap<PhoneType, String> phoneNumbers;
 	
 	public Employee(EmployeeRoles role, String fName, String lName, int id, String email, double salary) {
 		this.role = role;
