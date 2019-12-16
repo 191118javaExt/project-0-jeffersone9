@@ -27,7 +27,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		List<Integer> supervisors = new ArrayList<>();
 		try (Connection con = ConnectionUtil.getConnection()){
 			//create a sql select statement to get the data from employee table
-			String sql = "SELECT * FROM employee";
+			String sql = "SELECT * FROM bank.employee";
 			//Statement is a wrapper class for the String we created for the sql statement
 			Statement stmnt = con.createStatement();
 			//result set is where we will store the data we received from the sql db
@@ -41,11 +41,12 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 				String first = rs.getString("first_name");
 				String last = rs.getString("last_name");
 				String email = rs.getString("email");
+				String password = rs.getString("password");
 				double salary = rs.getDouble("salary");
 				int sup_id = rs.getInt("supervisor");
 				//now that we have all the data, we can create an employee object and add it to
 				//the list
-				Employee e = new Employee(EmployeeRoles.Default, first, last, id, email, salary);
+				Employee e = new Employee(EmployeeRoles.Default, first, last, id, email, password, salary);
 				employees.add(e);
 				//add the superisor id to supervisor list
 				supervisors.add(sup_id);
@@ -72,19 +73,19 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
 	@Override
 	public Employee findById(int id) {
-		// TODO Auto-generated method stub
 		Employee e = null;
 		try(Connection con = ConnectionUtil.getConnection()){
-			String sql = "SELECT * FROM employee WHERE emp_id = " + id;
+			String sql = "SELECT * FROM bank.employee WHERE emp_id = " + id;
 			Statement stmnt = con.createStatement();
 			ResultSet rs = stmnt.executeQuery(sql);
 			String first = rs.getString("first_name");
 			String last = rs.getString("last_name");
 			String email = rs.getString("email");
+			String password = rs.getString("password");
 			double salary = rs.getDouble("salary");
 			int sup_id = rs.getInt("supervisor");
-			e = new Employee(EmployeeRoles.Default, first, last, id, email, salary);
-			//need to set the supervisor id
+			e = new Employee(EmployeeRoles.Default, first, last, id, email, password, salary);
+			//TODO:need to set the supervisor id
 			rs.close();
 		}catch(SQLException ex) {
 			logger.warn("Unable to get employee from database", ex);

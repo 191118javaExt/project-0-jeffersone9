@@ -8,14 +8,16 @@ import java.util.Map;
  */
 public class Customer{
 
+	private int id;
 	private String username;
 	private String password;
-	private Map<String, Account> accounts = new HashMap<>();
+	private Map<Integer, Account> accounts = new HashMap<>();
 	private Account currAccount;
 	private String fName;
 	private String lName;
 	
-	public Customer(String username, String password, String fName, String lName) {
+	public Customer(int id, String username, String password, String fName, String lName) {
+		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.fName = fName;
@@ -27,6 +29,14 @@ public class Customer{
 	public void setCurrAccount(String accNum) {
 		this.currAccount = accounts.get(accNum);
 	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -53,12 +63,12 @@ public class Customer{
 		this.lName = lName;
 	}
 	
-	public void addAccount(AccountType accType, String accNum, String routeNum) {
+	public void addAccount(AccountType accType, int accNum, String routeNum) {
 		Account account = new Account(accType, accNum, routeNum);
 		accounts.put(accNum, account);
 	}
 	
-	public void addAccount(AccountType accType, String accNum, String routeNum, int balance) {
+	public void addAccount(AccountType accType, int accNum, String routeNum, int balance) {
 		Account account = new Account(accType, accNum, routeNum, balance);
 		accounts.put(accNum, account);
 	}
@@ -71,7 +81,7 @@ public class Customer{
 		return accounts.get(accNum);
 	}
 	
-	public Map<String, Account> getAccounts(){
+	public Map<Integer, Account> getAccounts(){
 		return accounts;
 	}
 	

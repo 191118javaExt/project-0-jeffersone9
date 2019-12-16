@@ -26,13 +26,13 @@ public class Bank {
 		return bank;
 	}
 	
-	public void addCustomer(String username, String password, String fName, String lName) {
-		Customer customer = new Customer(username, password, fName, lName);
+	public void addCustomer(int id, String username, String password, String fName, String lName) {
+		Customer customer = new Customer(id, username, password, fName, lName);
 		customers.put(username, customer);
 	}
 	
-	public void addEmployee(EmployeeRoles role, String fName, String lName, int id, String email, double salary) {
-		Employee employee = new Employee(role, fName, lName, id, email, salary);
+	public void addEmployee(EmployeeRoles role, String fName, String lName, int id, String email, String password, double salary) {
+		Employee employee = new Employee(role, fName, lName, id, email, password, salary);
 		employees.put(id, employee);
 	}
 }

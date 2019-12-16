@@ -6,38 +6,48 @@ package com.revature.models;
  */
 public class Account {
 
-	private int balance;
+	private double balance;
 	private AccountType accType;
-	private String accNumber;
+	private int accNumber;
 	private String routeNumber;
 	private AccountStatus status;
 	
-	//A constructor for creating an account
-	public Account(AccountType accType, String accNum, String routeNum) {
+	//most basic account constructor
+	public Account(int accNum, String routeNum) {
+		super();
+		this.accNumber = accNum;
+		this.routeNumber = routeNum;
+		this.balance = 0;
+		this.status = AccountStatus.Open;
+		this.accType = AccountType.Checking;
+	}
+	
+	//A constructor for creating an account with account type
+	public Account(AccountType accType, int accNum, String routeNum) {
 		super();
 		this.accType = accType;
-		accNumber = accNum;
-		routeNumber = routeNum;
-		balance = 0;
-		status = AccountStatus.Open;
+		this.accNumber = accNum;
+		this.routeNumber = routeNum;
+		this.balance = 0;
+		this.status = AccountStatus.Open;
 	}
 	
 	//A constructor including an initial balance
-	public Account(AccountType accType, String accNum, String routeNum, int balance) {
+	public Account(AccountType accType, int accNum, String routeNum, double balance) {
 		super();
 		this.accType = accType;
-		accNumber = accNum;
-		routeNumber = routeNum;
+		this.accNumber = accNum;
+		this.routeNumber = routeNum;
 		this.balance = balance;
-		status = AccountStatus.Open;
+		this.status = AccountStatus.Open;
 	}
 
 	//getters and setters
-	public int getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 
@@ -50,6 +60,23 @@ public class Account {
 		this.accType = accType;
 	}
 	
+	//db has this value as a string, so I'll convert it
+	public void changeAccType(String type) {
+		switch(type) {
+		case "checking":
+			this.changeAccType(AccountType.Checking);
+			break;
+		case "savings":
+			this.changeAccType(AccountType.Savings);
+			break;
+		case "credit":
+			this.changeAccType(AccountType.Credit);
+			break;
+		default: 
+			//TODO:throw invalid arg exception
+			break;
+		}
+	}
 	
 	public AccountStatus getStatus() {
 		return status;
@@ -58,13 +85,34 @@ public class Account {
 	public void setStatus(AccountStatus status) {
 		this.status = status;
 	}
+	
+	//db will return this value as a string as well
+	public void setStatus(String status) {
+		switch(status) {
+		case "open":
+			this.setStatus(AccountStatus.Open);
+			break;
+		case "cancelled":
+			this.setStatus(AccountStatus.Cancelled);
+			break;
+		case "approved":
+			this.setStatus(AccountStatus.Approved);
+			break;
+		case "denied":
+			this.setStatus(AccountStatus.Denied);
+			break;
+		default:
+			//TODO:throw invalid arg exception
+			break;
+		}
+	}
 
 	public String getRouteNumber() {
 		return routeNumber;
 	}
 
 
-	public String getAccNumber() {
+	public int getAccNumber() {
 		return accNumber;
 	}
 

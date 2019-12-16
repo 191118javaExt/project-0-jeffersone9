@@ -11,15 +11,17 @@ public class Employee{
 	private Employee supervisor;
 	private double salary;
 	private String email;
+	private String password;
 	private Account currAccount;
 	private HashMap<PhoneType, String> phoneNumbers;
 	
-	public Employee(EmployeeRoles role, String fName, String lName, int id, String email, double salary) {
+	public Employee(EmployeeRoles role, String fName, String lName, int id, String email, String password, double salary) {
 		this.role = role;
 		this.fName = fName;
 		this.lName = lName;
 		this.id = id;
 		this.email = email;
+		this.password = password;
 		this.salary = salary;
 	}
 
@@ -78,6 +80,15 @@ public class Employee{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Account getCurrAccount() {
