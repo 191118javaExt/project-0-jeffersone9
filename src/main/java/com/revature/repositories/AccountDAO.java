@@ -9,4 +9,5 @@ public interface AccountDAO {
 	public Account findAccountById(int id);
 	public boolean update(Account a);
 	public boolean insert(Account a);
+	public List<Account> getAccountsByCustomer(int id);
 }

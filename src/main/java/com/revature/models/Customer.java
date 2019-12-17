@@ -6,7 +6,7 @@ import java.util.Map;
 /*
  * Class representing people with at least one bank account with the bank
  */
-public class Customer{
+public class Customer extends User{
 
 	private int id;
 	private String username;
@@ -63,13 +63,13 @@ public class Customer{
 		this.lName = lName;
 	}
 	
-	public void addAccount(AccountType accType, int accNum, String routeNum) {
-		Account account = new Account(accType, accNum, routeNum);
+	public void addAccount(AccountType accType, int accNum) {
+		Account account = new Account(accType, accNum);
 		accounts.put(accNum, account);
 	}
 	
-	public void addAccount(AccountType accType, int accNum, String routeNum, int balance) {
-		Account account = new Account(accType, accNum, routeNum, balance);
+	public void addAccount(AccountType accType, int accNum, int balance) {
+		Account account = new Account(accType, accNum, balance);
 		accounts.put(accNum, account);
 	}
 	

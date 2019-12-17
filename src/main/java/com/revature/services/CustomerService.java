@@ -23,4 +23,8 @@ public class CustomerService {
 	public boolean insert(Customer c) {
 		return repository.insert(c);
 	}
+	
+	public Customer findByLogin(String user, String pass) {
+		return repository.findByLogin(user, pass);
+	}
 }

@@ -66,4 +66,22 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return false;
 	}
 
+	@Override
+	public Customer findByLogin(String user, String pass) {
+		Customer c = null;
+		try(Connection con = ConnectionUtil.getConnection()){
+			String sql = "SELECT * FROM bank.customer WHERE ";
+			sql += "email = " + user + " AND password = " + pass;
+			Statement stmnt = con.createStatement();
+			ResultSet rs = stmnt.executeQuery(sql);
+			String first = rs.getString("first_name");
+			String last = rs.getString("last_name");
+			int id = rs.getInt("customer_id");
+			c = new Customer(id, user, pass, first, last);
+		}catch(SQLException e) {
+			logger.warn("User or password not in db", e);
+		}
+		return c;
+	}
+
 }

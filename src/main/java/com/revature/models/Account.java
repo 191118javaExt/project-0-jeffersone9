@@ -9,35 +9,32 @@ public class Account {
 	private double balance;
 	private AccountType accType;
 	private int accNumber;
-	private String routeNumber;
+	private final String routeNumber = "11001100";
 	private AccountStatus status;
 	
 	//most basic account constructor
-	public Account(int accNum, String routeNum) {
+	public Account(int accNum) {
 		super();
 		this.accNumber = accNum;
-		this.routeNumber = routeNum;
 		this.balance = 0;
 		this.status = AccountStatus.Open;
 		this.accType = AccountType.Checking;
 	}
 	
 	//A constructor for creating an account with account type
-	public Account(AccountType accType, int accNum, String routeNum) {
+	public Account(AccountType accType, int accNum) {
 		super();
 		this.accType = accType;
 		this.accNumber = accNum;
-		this.routeNumber = routeNum;
 		this.balance = 0;
 		this.status = AccountStatus.Open;
 	}
 	
 	//A constructor including an initial balance
-	public Account(AccountType accType, int accNum, String routeNum, double balance) {
+	public Account(AccountType accType, int accNum, double balance) {
 		super();
 		this.accType = accType;
 		this.accNumber = accNum;
-		this.routeNumber = routeNum;
 		this.balance = balance;
 		this.status = AccountStatus.Open;
 	}

@@ -13,5 +13,5 @@ public interface EmployeeDAO {
 	public Employee findById(int id);
 	public boolean update(Employee e);
 	public boolean insert(Employee e);
-	
+	public Employee findByLogin(String user, String pass);
 }

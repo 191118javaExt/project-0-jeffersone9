@@ -70,7 +70,7 @@ public class Driver {
 		Customer c =  new Customer(bank.getCustomerSize() + 1, username, password, first, last);
 		cs.insert(c);
 		bank.addCustomer(bank.getCustomerSize(), c);
-		System.out.println("Account has been created");
+		logger.info("Account created");
 	}
 
 }

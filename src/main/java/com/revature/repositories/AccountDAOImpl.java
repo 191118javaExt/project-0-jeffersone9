@@ -26,11 +26,10 @@ public class AccountDAOImpl implements AccountDAO {
 			while(rs.next()) {
 				int id = rs.getInt("acc_id");
 				double balance =  rs.getDouble("balance");
-				String route = rs.getString("route_num");
 				String type = rs.getString("acc_type");
 				String status = rs.getString("status");
 				
-				Account a = new Account(id, route);
+				Account a = new Account(id);
 				a.changeAccType(type);
 				a.setStatus(status);
 				a.setBalance(balance);
@@ -58,6 +57,12 @@ public class AccountDAOImpl implements AccountDAO {
 	public boolean insert(Account a) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<Account> getAccountsByCustomer(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

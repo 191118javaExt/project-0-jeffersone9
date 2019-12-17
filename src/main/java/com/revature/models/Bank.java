@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ public class Bank {
 
 	private Map<Integer, Customer> customers = new HashMap<>();
 	private Map<Integer, Employee> employees = new HashMap<>();
+	private List<Account> accounts = new ArrayList();
 	private static Bank bank = null;
 	
 	private Bank() {

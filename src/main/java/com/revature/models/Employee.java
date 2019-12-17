@@ -2,7 +2,7 @@ package com.revature.models;
 
 import java.util.HashMap;
 
-public class Employee{
+public class Employee extends User{
 
 	private EmployeeRoles role;
 	private String fName;

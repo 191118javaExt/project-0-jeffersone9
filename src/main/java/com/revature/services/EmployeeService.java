@@ -23,6 +23,10 @@ public class EmployeeService {
 		return repository.findAll();
 	}
 	
+	public Employee findByLogin(String user, String pass) {
+		return repository.findByLogin(user, pass);
+	}
+	
 	//TODO:will add login service here
 	public boolean login(String username, String password) {
 		return true;
