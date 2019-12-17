@@ -1,0 +1,163 @@
+2019-12-16 14:28:05 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:00:24 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:51341/
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:06:26 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:51341/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:06:26 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:10:41 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:51341/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:10:41 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:11:08 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://127.0.0.1:51341/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:11:08 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:17:46 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:17:46 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:18:06 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql:postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:18:06 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:19:31 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:19:31 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:24:54 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:24:54 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:31:57 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:31:57 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:32:07 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:32:07 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:46:47 WARN  ConnectionUtil:31 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:29)
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:28)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-16 15:46:47 WARN  EmployeeDAOImpl:60 - Connection to db not created
+java.lang.NullPointerException
+	at com.revature.repositories.EmployeeDAOImpl.findAll(EmployeeDAOImpl.java:32)
+	at com.revature.services.EmployeeService.findAll(EmployeeService.java:23)
+	at com.revature.Driver.main(Driver.java:19)
+2019-12-17 10:29:50 WARN  CustomerDAOImpl:57 - Unable to add customer to DB
+org.postgresql.util.PSQLException: ERROR: column "elijah" does not exist
+  Position: 37
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246)
+	at com.revature.repositories.CustomerDAOImpl.insert(CustomerDAOImpl.java:55)
+	at com.revature.services.CustomerService.insert(CustomerService.java:24)
+	at com.revature.Driver.createAccount(Driver.java:71)
+	at com.revature.Driver.openMenu(Driver.java:48)
+	at com.revature.Driver.main(Driver.java:28)

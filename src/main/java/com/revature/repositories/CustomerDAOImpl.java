@@ -47,8 +47,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public boolean insert(Customer c) {
-		// TODO Auto-generated method stub
-		return false;
+		try (Connection con = ConnectionUtil.getConnection()) {
+			String sql = "INSERT INTO bank.customer ";
+			sql += String.format("VALUES('%d', '%s', '%s', '%s', '%s')", c.getId(), c.getfName(), c.getlName(),
+					c.getUsername(), c.getPassword());
+			Statement stmnt = con.createStatement();
+			stmnt.executeUpdate(sql);
+		}catch(SQLException e) {
+			logger.warn("Unable to add customer to DB", e);
+			return false;
+		}
+		return true;
 	}
 
 	@Override

@@ -5,6 +5,9 @@ package com.revature.models;
  * Either way its the person interacting with the accounts.
  * I will probably make this class generic
  */
-public class User {
+public abstract class User {
 
+	//user is probably gonna be used for login
+	private String password;
+	private String email;
 }

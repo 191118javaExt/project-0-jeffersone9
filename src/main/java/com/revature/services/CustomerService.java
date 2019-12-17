@@ -19,4 +19,8 @@ public class CustomerService {
 	public List<Customer> findAll(){
 		return repository.findAllCustomers();
 	}
+	
+	public boolean insert(Customer c) {
+		return repository.insert(c);
+	}
 }

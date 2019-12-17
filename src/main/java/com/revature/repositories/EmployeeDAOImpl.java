@@ -56,6 +56,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 			rs.close();
 		}catch(SQLException e) {
 			logger.warn("Unable to get all employees from database", e);
+		}catch(NullPointerException e) {
+			logger.warn("Connection to db not created", e);
 		}
 		//now we will go through the supervisor ids we got and use them to set the supervisors
 		//of the employees

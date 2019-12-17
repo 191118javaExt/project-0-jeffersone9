@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -9,8 +10,8 @@ import java.util.Map;
  */
 public class Bank {
 
-	public Map<String, Customer> customers = new HashMap<>();
-	public Map<Integer, Employee> employees = new HashMap<>();
+	private Map<Integer, Customer> customers = new HashMap<>();
+	private Map<Integer, Employee> employees = new HashMap<>();
 	private static Bank bank = null;
 	
 	private Bank() {
@@ -26,13 +27,31 @@ public class Bank {
 		return bank;
 	}
 	
-	public void addCustomer(int id, String username, String password, String fName, String lName) {
-		Customer customer = new Customer(id, username, password, fName, lName);
-		customers.put(username, customer);
+	public void addCustomer(int id, Customer customer) {
+		customers.put(id, customer);
 	}
 	
-	public void addEmployee(EmployeeRoles role, String fName, String lName, int id, String email, String password, double salary) {
-		Employee employee = new Employee(role, fName, lName, id, email, password, salary);
+	public void addEmployee( int id, Employee employee) {
 		employees.put(id, employee);
+	}
+	
+	public void addCustomer(List<Customer> c) {
+		for(Customer customer : c) {
+			customers.put(customer.getId(), customer);
+		}
+	}
+	
+	public void addEmployee(List<Employee> e) {
+		for(Employee employee: e) {
+			employees.put(employee.getId(), employee);
+		}
+	}
+	
+	public int getEmployeeSize() {
+		return employees.size();
+	}
+	
+	public int getCustomerSize() {
+		return customers.size();
 	}
 }

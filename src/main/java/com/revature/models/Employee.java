@@ -29,8 +29,17 @@ public class Employee{
 		return role;
 	}
 
-	public void setRole(EmployeeRoles role) {
-		this.role = role;
+	public void setRole(String role) {
+		switch(role) {
+		case "Associate":
+			this.role = EmployeeRoles.Default;
+			break;
+		case "Manager":
+			this.role = EmployeeRoles.Admin;
+			break;
+		default:
+			//TODO: this role does not exist, may need to throw
+		}
 	}
 
 	public String getfName() {
