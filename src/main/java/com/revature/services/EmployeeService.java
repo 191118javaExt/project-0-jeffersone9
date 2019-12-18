@@ -28,7 +28,7 @@ public class EmployeeService {
 	}
 	
 	//TODO:will add login service here
-	public boolean login(String username, String password) {
-		return true;
+	public Employee login(String username, String password) {
+		return repository.findByLogin(username, password);
 	}
 }

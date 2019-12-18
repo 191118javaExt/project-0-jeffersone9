@@ -112,15 +112,18 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		Employee emp = null;
 		try(Connection con = ConnectionUtil.getConnection()){
 			String sql = "SELECT * FROM bank.employee where ";
-			sql += "email = " + user + " AND password = " + pass;
+			sql += String.format("email = '%s' AND password = '%s'", user, pass);
 			Statement stmnt = con.createStatement();
 			ResultSet rs = stmnt.executeQuery(sql);
-			int id = rs.getInt("emp_id");
-			String first = rs.getString("first_name");
-			String last = rs.getString("last_name");
-			String job = rs.getString("job");
-			double salary = rs.getDouble("salary");
-			emp = new Employee(EmployeeRoles.Default, first, last, id, user, pass, salary);
+			while(rs.next()) {
+				
+				int id = rs.getInt("emp_id");
+				String first = rs.getString("first_name");
+				String last = rs.getString("last_name");
+				String job = rs.getString("job");
+				double salary = rs.getDouble("salary");
+				emp = new Employee(EmployeeRoles.Default, first, last, id, user, pass, salary);
+			}
 		}catch(SQLException e) {
 			logger.warn("User or password does not exist", e);
 		}

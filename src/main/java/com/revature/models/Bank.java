@@ -37,6 +37,10 @@ public class Bank {
 		employees.put(id, employee);
 	}
 	
+	public void addAccount(Account account) {
+		accounts.add(account);
+	}
+	
 	public void addCustomer(List<Customer> c) {
 		for(Customer customer : c) {
 			customers.put(customer.getId(), customer);
@@ -49,11 +53,33 @@ public class Bank {
 		}
 	}
 	
+	public void addAccount(List<Account> a) {
+		for(Account account : a) {
+			accounts.add(account);
+		}
+	}
+	
 	public int getEmployeeSize() {
 		return employees.size();
 	}
 	
 	public int getCustomerSize() {
 		return customers.size();
+	}
+	
+	public int getAccountSize() {
+		return accounts.size();
+	}
+	
+	public Employee getEmployee(int id) {
+		return employees.get(id);
+	}
+	
+	public Customer getCustomer(int id) {
+		return customers.get(id);
+	}
+	
+	public Account getAccount(int id) {
+		return accounts.get(id);
 	}
 }

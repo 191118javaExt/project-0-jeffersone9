@@ -48,21 +48,61 @@ public class AccountDAOImpl implements AccountDAO {
 	}
 
 	@Override
-	public boolean update(Account a) {
+	public boolean update(Account a, int id) {
+		//the only things that should be updated are balance, type, and status
+		try(Connection con = ConnectionUtil.getConnection()){
+			String sql = "Update bank.accounts";
+			sql += String.format("SET balance = %d, acc_type = '%s', status = '%s' ",
+					a.getBalance(), a.getAccTypeString(), a.getStatusString());
+			sql += String.format("Where acc_id = %d", id);
+			Statement stmnt = con.createStatement();
+			stmnt.executeUpdate(sql);
+			return true;
+		}catch(SQLException e) {
+			logger.warn("Unable to update account information", e);
+		}
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean insert(Account a) {
-		// TODO Auto-generated method stub
+	public boolean insert(Account a, int id) {
+		try(Connection con = ConnectionUtil.getConnection()){
+			String sql = "INSERT INTO bank.account VALUES";
+			sql += String.format("(%d, %d, %.2f, '%s', '%s')", a.getAccNumber(), id, 
+					a.getBalance(), a.getAccTypeString(), a.getStatusString());
+			Statement stmnt = con.createStatement();
+			stmnt.executeUpdate(sql);
+			return true;
+		}catch(SQLException e) {
+			logger.warn("Unable to create account", e);
+		}
 		return false;
 	}
 
 	@Override
 	public List<Account> getAccountsByCustomer(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Account> accounts = null;
+		try(Connection con = ConnectionUtil.getConnection()){
+			String sql = "SELECT * FROM bank.accounts ";
+			sql += String.format("WHERE holder_id = '%d'", id);
+			Statement stmnt = con.createStatement();
+			ResultSet rs = stmnt.executeQuery(sql);
+			while(rs.next()) {
+				int accNum = rs.getInt("acc_id");
+				double balance = rs.getDouble("balance");
+				String accType = rs.getString("acc_type");
+				String status = rs.getString("status");
+				Account a = new Account(accNum);
+				a.setStatus(status);
+				a.changeAccType(accType);
+				a.setBalance(balance);
+				accounts.add(a);
+			}
+		}catch(SQLException e) {
+			logger.warn("Unable to get account from user", e);
+		}
+		return accounts;
 	}
 
 }

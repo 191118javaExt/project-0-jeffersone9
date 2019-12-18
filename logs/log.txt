@@ -161,3 +161,117 @@ org.postgresql.util.PSQLException: ERROR: column "elijah" does not exist
 	at com.revature.Driver.createAccount(Driver.java:71)
 	at com.revature.Driver.openMenu(Driver.java:48)
 	at com.revature.Driver.main(Driver.java:28)
+2019-12-17 19:42:26 WARN  CustomerDAOImpl:82 - User or password not in db
+org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "elijah"
+  Position: 43
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:225)
+	at com.revature.repositories.CustomerDAOImpl.findByLogin(CustomerDAOImpl.java:76)
+	at com.revature.services.CustomerService.findByLogin(CustomerService.java:28)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:42:26 WARN  EmployeeDAOImpl:125 - User or password does not exist
+org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "elijah"
+  Position: 43
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeQuery(PgStatement.java:225)
+	at com.revature.repositories.EmployeeDAOImpl.findByLogin(EmployeeDAOImpl.java:117)
+	at com.revature.services.EmployeeService.findByLogin(EmployeeService.java:27)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:47:40 WARN  CustomerDAOImpl:82 - User or password not in db
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:1887)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.CustomerDAOImpl.findByLogin(CustomerDAOImpl.java:77)
+	at com.revature.services.CustomerService.findByLogin(CustomerService.java:28)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:47:40 WARN  EmployeeDAOImpl:125 - User or password does not exist
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2046)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findByLogin(EmployeeDAOImpl.java:118)
+	at com.revature.services.EmployeeService.findByLogin(EmployeeService.java:27)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:48:07 INFO  Driver:75 - Account created
+2019-12-17 19:48:23 WARN  CustomerDAOImpl:82 - User or password not in db
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:1887)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.CustomerDAOImpl.findByLogin(CustomerDAOImpl.java:77)
+	at com.revature.services.CustomerService.findByLogin(CustomerService.java:28)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:48:23 WARN  EmployeeDAOImpl:125 - User or password does not exist
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2046)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findByLogin(EmployeeDAOImpl.java:118)
+	at com.revature.services.EmployeeService.findByLogin(EmployeeService.java:27)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:51:02 WARN  CustomerDAOImpl:82 - User or password not in db
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:1887)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
+	at com.revature.repositories.CustomerDAOImpl.findByLogin(CustomerDAOImpl.java:77)
+	at com.revature.services.CustomerService.findByLogin(CustomerService.java:28)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:51:03 WARN  EmployeeDAOImpl:125 - User or password does not exist
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2046)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findByLogin(EmployeeDAOImpl.java:118)
+	at com.revature.services.EmployeeService.findByLogin(EmployeeService.java:27)
+	at com.revature.services.LoginService.login(LoginService.java:10)
+	at com.revature.Driver.login(Driver.java:84)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:56:48 WARN  EmployeeDAOImpl:125 - User or password does not exist
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+	at org.postgresql.jdbc.PgResultSet.checkResultSet(PgResultSet.java:2786)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2046)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at com.revature.repositories.EmployeeDAOImpl.findByLogin(EmployeeDAOImpl.java:118)
+	at com.revature.services.EmployeeService.login(EmployeeService.java:32)
+	at com.revature.Driver.login(Driver.java:86)
+	at com.revature.Driver.openMenu(Driver.java:52)
+	at com.revature.Driver.main(Driver.java:30)
+2019-12-17 19:56:48 INFO  Driver:92 - Customer has logged in

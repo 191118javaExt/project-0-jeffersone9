@@ -20,4 +20,12 @@ public class AccountService {
 	public List<Account> findAll(){
 		return repository.findAllAccounts();
 	}
+	
+	public boolean insert(Account a, int id) {
+		return repository.insert(a, id);
+	}
+	
+	public boolean update(Account a, int id) {
+		return repository.update(a, id);
+	}
 }

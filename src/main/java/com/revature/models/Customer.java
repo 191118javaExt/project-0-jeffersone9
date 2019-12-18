@@ -63,31 +63,5 @@ public class Customer extends User{
 		this.lName = lName;
 	}
 	
-	public void addAccount(AccountType accType, int accNum) {
-		Account account = new Account(accType, accNum);
-		accounts.put(accNum, account);
-	}
-	
-	public void addAccount(AccountType accType, int accNum, int balance) {
-		Account account = new Account(accType, accNum, balance);
-		accounts.put(accNum, account);
-	}
-	
-	public void removeAccount(String accNum) {
-		accounts.remove(accNum);
-	}
-	
-	public Account getAccount(String accNum) {
-		return accounts.get(accNum);
-	}
-	
-	public Map<Integer, Account> getAccounts(){
-		return accounts;
-	}
-	
-	public void transfer(int amount, String accNum) {
-		Account transferTo = getAccount(accNum);
-		currAccount.withdraw(amount);
-		transferTo.deposit(amount);
-	}
+
 }

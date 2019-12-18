@@ -52,6 +52,20 @@ public class Account {
 	public AccountType getAccType() {
 		return accType;
 	}
+	
+	public String getAccTypeString() {
+		switch(accType) {
+		case Checking:
+			return "checking";
+		case Savings:
+			return "savings";
+		case Credit:
+			return "credit";
+		default:
+			return null;
+			//invalid arg, but shouldn't happen
+		}
+	}
 
 	public void changeAccType(AccountType accType) {
 		this.accType = accType;
@@ -81,6 +95,21 @@ public class Account {
 
 	public void setStatus(AccountStatus status) {
 		this.status = status;
+	}
+	
+	public String getStatusString() {
+		switch(this.status) {
+		case Open:
+			return "open";
+		case Cancelled:
+			return "cancelled";
+		case Approved:
+			return "approved";
+		case Denied:
+			return "denied";
+		default:
+			return null;
+		}
 	}
 	
 	//db will return this value as a string as well
@@ -118,14 +147,14 @@ public class Account {
 		this.accType = accType;
 	}
 
-	public void withdraw(int amount) throws IllegalArgumentException{
+	public void withdraw(double amount) throws IllegalArgumentException{
 		if(amount < 0 || amount > balance) {
 			throw new IllegalArgumentException();
 		}
 		balance -= amount;
 	}
 	
-	public void deposit(int amount) throws IllegalArgumentException{
+	public void deposit(double amount) throws IllegalArgumentException{
 		if(amount < 0) {
 			throw new IllegalArgumentException();
 		}

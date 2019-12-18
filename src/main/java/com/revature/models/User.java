@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.util.List;
+import java.util.Map;
 
 /*
  * User is gonna be either a customer or employee.
@@ -12,5 +13,63 @@ public abstract class User {
 	//user is probably gonna be used for login
 	private String password;
 	private String email;
+	private Account currAccount;
+	private int id;
 	private List<Account> accounts;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
+	
+	public Account getCurrAccount() {
+		return currAccount;
+	}
+	public void setCurrAccount(Account currAccount) {
+		this.currAccount = currAccount;
+	}
+	public void addAccount(AccountType accType, int accNum) {
+		Account account = new Account(accType, accNum);
+		accounts.add(account);
+	}
+	
+	public void addAccount(AccountType accType, int accNum, int balance) {
+		Account account = new Account(accType, accNum, balance);
+		accounts.add(account);
+	}
+	
+	public void removeAccount(int accNum) {
+		accounts.remove(accNum);
+	}
+	
+	public Account getAccount(int accNum) {
+		return accounts.get(accNum);
+	}
+	
+	public void transfer(double amount, int accNum) {
+		Account transferTo = getAccount(accNum);
+		currAccount.withdraw(amount);
+		transferTo.deposit(amount);
+	}
 }
