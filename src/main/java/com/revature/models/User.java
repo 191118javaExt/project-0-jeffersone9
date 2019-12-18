@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +16,7 @@ public abstract class User {
 	private String email;
 	private Account currAccount;
 	private int id;
-	private List<Account> accounts;
+	private List<Account> accounts = new ArrayList<>();
 	public String getPassword() {
 		return password;
 	}
@@ -51,20 +52,20 @@ public abstract class User {
 	}
 	public void addAccount(AccountType accType, int accNum) {
 		Account account = new Account(accType, accNum);
-		accounts.add(account);
+		this.accounts.add(account);
 	}
 	
 	public void addAccount(AccountType accType, int accNum, int balance) {
 		Account account = new Account(accType, accNum, balance);
-		accounts.add(account);
+		this.accounts.add(account);
 	}
 	
 	public void removeAccount(int accNum) {
-		accounts.remove(accNum);
+		this.accounts.remove(accNum);
 	}
 	
 	public Account getAccount(int accNum) {
-		return accounts.get(accNum);
+		return this.accounts.get(accNum);
 	}
 	
 	public void transfer(double amount, int accNum) {

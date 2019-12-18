@@ -4,6 +4,8 @@ import com.revature.repositories.AccountDAO;
 import com.revature.repositories.AccountDAOImpl;
 
 import java.util.List;
+import java.util.Map;
+
 import com.revature.models.Account;
 
 public class AccountService {
@@ -17,7 +19,7 @@ public class AccountService {
 		repository = dao;
 	}
 	
-	public List<Account> findAll(){
+	public Map<Integer, List<Account>> findAll(){
 		return repository.findAllAccounts();
 	}
 	

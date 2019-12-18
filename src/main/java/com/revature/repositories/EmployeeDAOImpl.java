@@ -80,13 +80,16 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 			String sql = "SELECT * FROM bank.employee WHERE emp_id = " + id;
 			Statement stmnt = con.createStatement();
 			ResultSet rs = stmnt.executeQuery(sql);
-			String first = rs.getString("first_name");
-			String last = rs.getString("last_name");
-			String email = rs.getString("email");
-			String password = rs.getString("password");
-			double salary = rs.getDouble("salary");
-			int sup_id = rs.getInt("supervisor");
-			e = new Employee(EmployeeRoles.Default, first, last, id, email, password, salary);
+			while(rs.next()) {
+				
+				String first = rs.getString("first_name");
+				String last = rs.getString("last_name");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				double salary = rs.getDouble("salary");
+				int sup_id = rs.getInt("supervisor");
+				e = new Employee(EmployeeRoles.Default, first, last, id, email, password, salary);
+			}
 			//TODO:need to set the supervisor id
 			rs.close();
 		}catch(SQLException ex) {

@@ -41,8 +41,23 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public Customer findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Customer c = null;
+		try (Connection con = ConnectionUtil.getConnection()){
+			String sql = "SELECT * FROM bank.customer WHERE customer_id = " + id;
+			Statement stmnt = con.createStatement();
+			ResultSet rs = stmnt.executeQuery(sql);
+			while(rs.next()) {
+				String first = rs.getString("first_name");
+				String last = rs.getString("last_name");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				
+				c = new Customer(id, first, last, email, password);
+			}
+		}catch(SQLException e) {
+			logger.warn("Unable to get customer from the database", e);
+		}
+		return c;
 	}
 
 	@Override

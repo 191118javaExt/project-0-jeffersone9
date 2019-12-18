@@ -27,4 +27,8 @@ public class CustomerService {
 	public Customer findByLogin(String user, String pass) {
 		return repository.findByLogin(user, pass);
 	}
+	
+	public Customer findById(int id) {
+		return repository.findById(id);
+	}
 }

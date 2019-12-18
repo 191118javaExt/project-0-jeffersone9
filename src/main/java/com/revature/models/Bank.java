@@ -13,7 +13,9 @@ public class Bank {
 
 	private Map<Integer, Customer> customers = new HashMap<>();
 	private Map<Integer, Employee> employees = new HashMap<>();
-	private List<Account> accounts = new ArrayList();
+	//the account map will have the user id as the key and a list of accounts as a value
+	//since each id can have multiple accounts
+	private Map<Integer, List<Account>> accounts = new HashMap<>();
 	private static Bank bank = null;
 	
 	private Bank() {
@@ -37,8 +39,14 @@ public class Bank {
 		employees.put(id, employee);
 	}
 	
-	public void addAccount(Account account) {
-		accounts.add(account);
+	public void addAccount(Account account, int id) {
+		List<Account> a = accounts.get(id);
+		a.add(account);
+		accounts.put(id, a);
+	}
+	
+	public void addAccount(Map<Integer, List<Account>> accountMap) {
+		this.accounts = accountMap;
 	}
 	
 	public void addCustomer(List<Customer> c) {
@@ -53,10 +61,12 @@ public class Bank {
 		}
 	}
 	
-	public void addAccount(List<Account> a) {
+	public void addAccount(List<Account> a, int id) {
+		List<Account> currentList = accounts.get(id);
 		for(Account account : a) {
-			accounts.add(account);
+			currentList.add(account);
 		}
+		accounts.put(id, currentList);
 	}
 	
 	public int getEmployeeSize() {
@@ -79,7 +89,53 @@ public class Bank {
 		return customers.get(id);
 	}
 	
-	public Account getAccount(int id) {
+	public List<Account> getAccount(int id) {
 		return accounts.get(id);
 	}
+	
+	public Map<Integer, Employee> getEmployees(){
+		return this.employees;
+	}
+	
+	public Map<Integer, Customer> getCustomers(){
+		return this.customers;
+	}
+	
+	public Map<Integer, List<Account>> getPendingAccounts(){
+		Map<Integer, List<Account>> pending = new HashMap<>();
+		for(int id = 1; id <= bank.getCustomerSize() + bank.getEmployeeSize(); id++)
+		{
+			List<Account> pendingList = new ArrayList<>();
+			if(accounts.containsKey(id)) {
+				
+				for(int i = 0; i < accounts.get(id).size(); i++) {
+					if(accounts.get(id).get(i).getStatus() == AccountStatus.Open) {
+						pendingList.add(accounts.get(id).get(i));
+					}
+					pending.put(id, pendingList);
+			}
+			
+		}
+		}
+		return pending;
+	}
+	
+	public Map<Integer, List<Account>> getApprovedAccounts(){
+		Map<Integer, List<Account>> approved = new HashMap<>();
+		for(int id = 1; id <= accounts.size(); id++) {
+			List<Account> approvedList = new ArrayList<>();
+			if(accounts.containsKey(id)) {
+				
+				for(int i = 0; i < bank.getEmployeeSize() + bank.getCustomerSize(); i++) {
+					if(accounts.get(id).get(i).getStatus() == AccountStatus.Approved) {
+						approvedList.add(accounts.get(id).get(i));
+					}
+					approved.put(id, approvedList);
+				}
+			}
+		}
+		return approved;
+	}
+	
+	
 }

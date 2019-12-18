@@ -23,6 +23,9 @@ public class EmployeeService {
 		return repository.findAll();
 	}
 	
+	public Employee findById(int id) {
+		return repository.findById(id);
+	}
 	public Employee findByLogin(String user, String pass) {
 		return repository.findByLogin(user, pass);
 	}

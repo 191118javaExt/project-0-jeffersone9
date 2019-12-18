@@ -5,7 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 
@@ -16,8 +18,8 @@ public class AccountDAOImpl implements AccountDAO {
 
 	private static Logger logger = Logger.getLogger(AccountDAOImpl.class);
 	@Override
-	public List<Account> findAllAccounts() {
-		List<Account> accounts = new ArrayList<>();
+	public Map<Integer, List<Account>> findAllAccounts() {
+		Map<Integer, List<Account>> accounts = new HashMap<>();
 		try(Connection con = ConnectionUtil.getConnection()){
 			String sql = "SELECT * FROM bank.accounts";
 			Statement stmnt = con.createStatement();
@@ -25,15 +27,21 @@ public class AccountDAOImpl implements AccountDAO {
 			
 			while(rs.next()) {
 				int id = rs.getInt("acc_id");
+				int holderId = rs.getInt("holder_id");
 				double balance =  rs.getDouble("balance");
 				String type = rs.getString("acc_type");
 				String status = rs.getString("status");
-				
 				Account a = new Account(id);
 				a.changeAccType(type);
 				a.setStatus(status);
 				a.setBalance(balance);
-				accounts.add(a);
+				if(accounts.containsKey(holderId)) {
+					accounts.get(holderId).add(a);
+				}
+				else {
+					accounts.put(holderId, new ArrayList<>());
+					accounts.get(holderId).add(a);
+				}
 			}	
 		}catch(SQLException e) {
 			logger.warn("Could not retrieve all of the accounts", e);
@@ -51,8 +59,8 @@ public class AccountDAOImpl implements AccountDAO {
 	public boolean update(Account a, int id) {
 		//the only things that should be updated are balance, type, and status
 		try(Connection con = ConnectionUtil.getConnection()){
-			String sql = "Update bank.accounts";
-			sql += String.format("SET balance = %d, acc_type = '%s', status = '%s' ",
+			String sql = "Update bank.accounts ";
+			sql += String.format("SET balance = %.2f, acc_type = '%s', status = '%s' ",
 					a.getBalance(), a.getAccTypeString(), a.getStatusString());
 			sql += String.format("Where acc_id = %d", id);
 			Statement stmnt = con.createStatement();
@@ -68,7 +76,7 @@ public class AccountDAOImpl implements AccountDAO {
 	@Override
 	public boolean insert(Account a, int id) {
 		try(Connection con = ConnectionUtil.getConnection()){
-			String sql = "INSERT INTO bank.account VALUES";
+			String sql = "INSERT INTO bank.accounts VALUES";
 			sql += String.format("(%d, %d, %.2f, '%s', '%s')", a.getAccNumber(), id, 
 					a.getBalance(), a.getAccTypeString(), a.getStatusString());
 			Statement stmnt = con.createStatement();

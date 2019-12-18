@@ -275,3 +275,124 @@ org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps yo
 	at com.revature.Driver.openMenu(Driver.java:52)
 	at com.revature.Driver.main(Driver.java:30)
 2019-12-17 19:56:48 INFO  Driver:92 - Customer has logged in
+2019-12-18 04:10:16 INFO  Driver:98 - Customer has logged in
+2019-12-18 05:07:01 INFO  Driver:99 - Customer has logged in
+2019-12-18 05:07:17 WARN  AccountDAOImpl:78 - Unable to create account
+org.postgresql.util.PSQLException: ERROR: relation "bank.account" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246)
+	at com.revature.repositories.AccountDAOImpl.insert(AccountDAOImpl.java:75)
+	at com.revature.services.AccountService.insert(AccountService.java:25)
+	at com.revature.Driver.createBankAccount(Driver.java:161)
+	at com.revature.Driver.determineBankAccount(Driver.java:140)
+	at com.revature.Driver.accountMenu(Driver.java:117)
+	at com.revature.Driver.login(Driver.java:100)
+	at com.revature.Driver.openMenu(Driver.java:58)
+	at com.revature.Driver.main(Driver.java:36)
+2019-12-18 05:07:17 WARN  Driver:167 - Account was not added
+2019-12-18 05:09:12 INFO  Driver:99 - Customer has logged in
+2019-12-18 05:11:54 INFO  Driver:99 - Customer has logged in
+2019-12-18 05:12:00 WARN  AccountDAOImpl:78 - Unable to create account
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "accounts_pkey"
+  Detail: Key (acc_id)=(1) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246)
+	at com.revature.repositories.AccountDAOImpl.insert(AccountDAOImpl.java:75)
+	at com.revature.services.AccountService.insert(AccountService.java:25)
+	at com.revature.Driver.createBankAccount(Driver.java:161)
+	at com.revature.Driver.determineBankAccount(Driver.java:140)
+	at com.revature.Driver.accountMenu(Driver.java:117)
+	at com.revature.Driver.login(Driver.java:100)
+	at com.revature.Driver.openMenu(Driver.java:58)
+	at com.revature.Driver.main(Driver.java:36)
+2019-12-18 05:12:00 WARN  Driver:167 - Account was not added
+2019-12-18 05:15:54 INFO  Driver:99 - Customer has logged in
+2019-12-18 05:17:04 INFO  Driver:99 - Customer has logged in
+2019-12-18 05:21:20 INFO  Driver:99 - Customer has logged in
+2019-12-18 05:21:26 INFO  Driver:164 - Account has been added
+2019-12-18 05:21:45 WARN  Driver:196 - Account was opened, but has not been approved by the bank
+2019-12-18 11:49:33 INFO  Driver:97 - Employee has logged in
+2019-12-18 11:52:28 INFO  Driver:97 - Employee has logged in
+2019-12-18 11:54:30 INFO  Driver:97 - Employee has logged in
+2019-12-18 11:55:12 INFO  Driver:97 - Employee has logged in
+2019-12-18 11:56:55 INFO  Driver:97 - Employee has logged in
+2019-12-18 12:56:48 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:00:45 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:01:17 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:03:26 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:03:53 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:08:57 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:11:44 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:15:37 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:17:48 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:18:50 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:18:56 WARN  AccountDAOImpl:70 - Unable to update account information
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 33
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246)
+	at com.revature.repositories.AccountDAOImpl.update(AccountDAOImpl.java:67)
+	at com.revature.services.AccountService.update(AccountService.java:31)
+	at com.revature.Driver.approveAccounts(Driver.java:292)
+	at com.revature.Driver.manageAccounts(Driver.java:246)
+	at com.revature.Driver.accountMenu(Driver.java:130)
+	at com.revature.Driver.login(Driver.java:99)
+	at com.revature.Driver.openMenu(Driver.java:62)
+	at com.revature.Driver.main(Driver.java:40)
+2019-12-18 13:18:56 INFO  Driver:293 - Account has been approved
+2019-12-18 13:21:35 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:23:39 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:24:43 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:25:19 WARN  AccountDAOImpl:70 - Unable to update account information
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 33
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:309)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:295)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:272)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246)
+	at com.revature.repositories.AccountDAOImpl.update(AccountDAOImpl.java:67)
+	at com.revature.services.AccountService.update(AccountService.java:31)
+	at com.revature.Driver.approveAccounts(Driver.java:292)
+	at com.revature.Driver.manageAccounts(Driver.java:246)
+	at com.revature.Driver.accountMenu(Driver.java:130)
+	at com.revature.Driver.login(Driver.java:99)
+	at com.revature.Driver.openMenu(Driver.java:62)
+	at com.revature.Driver.main(Driver.java:40)
+2019-12-18 13:25:19 INFO  Driver:293 - Account has been approved
+2019-12-18 13:34:20 INFO  Driver:98 - Employee has logged in
+2019-12-18 13:34:29 INFO  Driver:293 - Account has been approved
+2019-12-18 13:35:13 INFO  Driver:103 - Customer has logged in
+2019-12-18 13:35:17 WARN  Driver:207 - You do not have any accounts under this user
+2019-12-18 14:10:40 INFO  Driver:88 - Account created
+2019-12-18 14:11:19 INFO  Driver:107 - Customer has logged in
+2019-12-18 14:12:40 INFO  Driver:107 - Customer has logged in
+2019-12-18 14:12:45 WARN  Driver:215 - You do not have any accounts under this user
+2019-12-18 14:14:13 INFO  Driver:107 - Customer has logged in
+2019-12-18 14:14:18 WARN  Driver:215 - You do not have any accounts under this user
